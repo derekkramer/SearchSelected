@@ -12,16 +12,16 @@
         "persistent": false
     },
     "browser_action": {
-        "default_icon": "images/tabFlipper16.png",
+        "default_icon": "images/icon32.png",
         "default_title": "Press Ctrl+k to search selected text in a new tab"
     },
     "commands": {
         "search": {
             "suggested_key": {
-                "default": "Ctrl+K",
-                "mac": "MacCtrl+K"
+                "default": "Ctrl+Shift+K",
+                "mac": "MacCtrl+Shift+K"
             },
-            "description": "Search in a new tab"
+            "description": "Search selected in a new tab"
         }
     },
     "permissions": [
@@ -29,9 +29,9 @@
         "activeTab"
     ],
     "icons": {
-        "16": "images/tabFlipper16.png",
-        "32": "images/tabFlipper32.png",
-        "48": "images/tabFlipper48.png",
-        "128": "images/tabFlipper128.png"
+        "16": "images/icon32.png",
+        "32": "images/icon64.png",
+        "48": "images/icon96.png",
+        "128": "images/icon256.png"
     }
 }

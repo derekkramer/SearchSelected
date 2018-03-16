@@ -1,5 +1,5 @@
 chrome.commands.onCommand.addListener(function(command) {
-    if(command) {
+    if (command) {
         chrome.tabs.getSelected(null, function(tab) {
             chrome.tabs.query({
                 active: true,
@@ -8,9 +8,12 @@ chrome.commands.onCommand.addListener(function(command) {
                 chrome.tabs.sendMessage(tabs[0].id, {
                     action: "getSelection"
                 }, function(response) {
-                    var url = encodeGoogle(response.data.trim());
+                    console.log(response);
+                    if(response) {
+                        var url = encodeGoogle(response.data.trim());
 
-                    chrome.tabs.create({ url: url });
+                        chrome.tabs.create({url: url});
+                    }
                 });
             });
         });
