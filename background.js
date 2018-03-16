@@ -8,7 +8,6 @@ chrome.commands.onCommand.addListener(function(command) {
                 chrome.tabs.sendMessage(tabs[0].id, {
                     action: "getSelection"
                 }, function(response) {
-                    console.log(response);
                     if(response) {
                         var url = encodeGoogle(response.data.trim());
 
