@@ -3,7 +3,6 @@
     "name": "SearchSelected",
     "version": "0.1.0",
 
-    "default_locale": "en",
     "description": "Hotkey for searching selected text in a new tab",
     "icons": {
         "16": "images/icon32.png",
@@ -38,9 +37,15 @@
             "description": "Search selected in a new tab"
         }
     },
-    
+
+    "options_ui": {
+        "page": "options/options.html",
+        "chrome_style": true
+    },
+
     "permissions": [
+        "activeTab",
         "tabs",
-        "activeTab"
+        "storage"
     ]
 }

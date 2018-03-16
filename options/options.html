@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>SearchSelected</title>
+        <link rel="stylesheet" type="text/css" href="options.css">
+    </head>
+
+    <body>
+        <section>
+            <label>
+                Search Engine:
+            </label>
+            <article>
+                <select id="engine">
+                    <option value="google">Google</option>
+                    <option value="duckduckgo">DuckDuckGo</option>
+                    <option value="wolframalpha">WolframAlpha</option>
+                </select>
+            </article>
+        </section>
+        <section>
+            <label>
+                Shortcut:
+            </label>
+            <article>
+                <input type="text" name="shortcut">
+            </article>
+        </section>
+        <footer>
+            <button id="save">Save</button>
+        </footer>
+
+        <div id="status">&nbsp;</div>
+
+        <script src="options.js"></script>
+    </body>
+
+</html>

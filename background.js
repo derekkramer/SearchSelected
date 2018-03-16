@@ -1,5 +1,17 @@
+var BASE = {
+    'google': 'https://www.google.com/search?q=',
+    'duckduckgo': 'https://duckduckgo.com/?q=',
+    'wolframalpha': 'http://www.wolframalpha.com/input/?i='
+};
+
+function engines(engine, str) {
+    var url = BASE[engine] + encodeURI(str.replace(/ /g, '+'));
+
+    return url;
+}
+
 chrome.commands.onCommand.addListener(function(command) {
-    if (command) {
+    if(command) {
         chrome.tabs.getSelected(null, function(tab) {
             chrome.tabs.query({
                 active: true,
@@ -9,9 +21,11 @@ chrome.commands.onCommand.addListener(function(command) {
                     action: "getSelection"
                 }, function(response) {
                     if(response) {
-                        var url = encodeGoogle(response.data.trim());
+                        getEngine().then(function(engine) {
+                            var url = engines(engine, response.data.trim());
 
-                        chrome.tabs.create({url: url});
+                            chrome.tabs.create({url: url});
+                        });
                     }
                 });
             });
@@ -19,10 +33,22 @@ chrome.commands.onCommand.addListener(function(command) {
     }
 });
 
-function encodeGoogle(str) {
-    var ENGINE = 'https://www.google.com/search?q=';
+function getEngine() {
+    var engine = 'google';
 
-    var url = ENGINE + encodeURI(str.replace(/ /g, '+'));
+    return new Promise(function(resolve, reject) {
+        chrome.storage.sync.get(['searchselected_engine'], function(result) {
+            if (result.hasOwnProperty('searchselected_engine')) {
+                engine = result['searchselected_engine'];
+            } else {
+                chrome.storage.sync.set({
+                    searchselected_engine: 'google'
+                }, function() {
+                    engine = 'google';
+                });
+            }
 
-    return url;
+            resolve(engine);
+        });
+    });
 }

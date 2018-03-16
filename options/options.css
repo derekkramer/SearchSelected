@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 0 10px;
+    width: 100vw;
+}
+
+footer, section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+footer {
+    justify-content: center;
+    padding: 20px 0 5px;
+}
+
+section label, section article {
+    align-items: center;
+    display: flex;
+    padding: 5px;
+}
+
+section label {
+    justify-content: flex-end;
+    width: 40%;
+}
+
+section article {
+    justify-content: flex-start;
+    width: 60%;
+}
+
+select, input {
+    width: 70%;
+}
+
+div {
+    color: #00cc00;
+    font-size: 12px;
+    line-height: 14px;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+}
