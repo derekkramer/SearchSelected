@@ -3,7 +3,8 @@
     "name": "SearchSelected",
     "version": "0.1.0",
 
-    "description": "Hotkey for searching selected text in a new tab",
+    "description": "Hotkey for searching selected text in a new tab with a custom search engine.",
+
     "icons": {
         "16": "images/icon32.png",
         "32": "images/icon64.png",
@@ -29,12 +30,11 @@
     }],
 
     "commands": {
-        "search": {
+        "_execute_browser_action": {
             "suggested_key": {
                 "default": "Ctrl+Shift+K",
                 "mac": "MacCtrl+Shift+K"
-            },
-            "description": "Search selected in a new tab"
+            }
         }
     },
 
