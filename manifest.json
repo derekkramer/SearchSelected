@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "SearchSelected",
-    "version": "0.1.0",
+    "version": "1.0.0",
 
     "description": "Search selected text in a new tab using a custom search engine with Ctrl-Shift-K.",
 
