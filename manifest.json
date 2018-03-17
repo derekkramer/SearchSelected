@@ -3,7 +3,7 @@
     "name": "SearchSelected",
     "version": "0.1.0",
 
-    "description": "Ctrl-Shift-K to search selected text in a new tab with a custom search engine.",
+    "description": "Search selected text in a new tab using a custom search engine with Ctrl-Shift-K.",
 
     "icons": {
         "16": "images/icon32.png",
